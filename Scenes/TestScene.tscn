@@ -73,6 +73,7 @@ minBounds = Vector2(-7, 1.25)
 maxBounds = Vector2(7, 10)
 minOffset = Vector2(-6.5, 1.2)
 maxOffset = Vector2(-15.5, 3.2)
+minDistance = -10.0
 maxDistance = 14.5
 boundsAdditionalNear = 1.9
 boundsAdditionalFar = 1.95
