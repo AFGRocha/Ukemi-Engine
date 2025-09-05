@@ -1,0 +1,67 @@
+[gd_resource type="Resource" script_class="FighterState" load_steps=10 format=3 uid="uid://rp85vh5pu85n"]
+
+[ext_resource type="Script" uid="uid://b8vqwkv52qq3e" path="res://Scripts/SakugaEngine/Resources/AnimationSettings.cs" id="1_4f7lk"]
+[ext_resource type="Script" uid="uid://bf60srwkccsm8" path="res://Scripts/SakugaEngine/Resources/FighterState.cs" id="1_lwfdj"]
+[ext_resource type="Script" uid="uid://5qrsoteskjym" path="res://Scripts/SakugaEngine/Resources/HitboxState.cs" id="2_aegmo"]
+[ext_resource type="Script" uid="uid://5you05l2efnd" path="res://Scripts/SakugaEngine/Resources/StatePhysics.cs" id="2_bbqmk"]
+[ext_resource type="Script" uid="uid://bia88bspuvxd" path="res://Scripts/SakugaEngine/Resources/StateTransitionSettings.cs" id="5_1selg"]
+
+[sub_resource type="Resource" id="Resource_aegmo"]
+script = ExtResource("1_4f7lk")
+AtFrame = 0
+SourceAnimation = "Falling"
+LimitRange = false
+AnimationRange = Vector2i(0, 0)
+Offset = Vector3(0, 0, 0)
+metadata/_custom_type_script = "uid://b8vqwkv52qq3e"
+
+[sub_resource type="Resource" id="Resource_1selg"]
+script = ExtResource("2_aegmo")
+animationStage = 0
+Frame = 0
+HitboxIndex = 0
+metadata/_custom_type_script = "uid://5qrsoteskjym"
+
+[sub_resource type="Resource" id="Resource_4f7lk"]
+script = ExtResource("2_bbqmk")
+Frame = 0
+UseLateralSpeed = true
+LateralSpeed = 20000
+UseVerticalSpeed = false
+VerticalSpeed = 0
+UseGravity = true
+Gravity = 200000
+UseLateralInertia = false
+UseVerticalInertia = false
+UseHorizontalInput = false
+UseVerticalInput = false
+metadata/_custom_type_script = "uid://5you05l2efnd"
+
+[sub_resource type="Resource" id="Resource_00ht3"]
+script = ExtResource("5_1selg")
+StateIndex = 8
+Condition = 4
+AtFrame = -1
+DistanceArea = Vector2i(0, 999999)
+metadata/_custom_type_script = "uid://bia88bspuvxd"
+
+[resource]
+script = ExtResource("1_lwfdj")
+StateName = "Jump_Forward"
+Type = 1
+OffTheGround = false
+Duration = 6
+Loop = true
+LoopFrames = Vector2i(0, 5)
+TurnState = -1
+HitStunFrameLimit = -1
+stateProperties = null
+statePhysics = Array[Object]([SubResource("Resource_4f7lk")])
+hitboxStates = Array[Object]([SubResource("Resource_1selg")])
+animationEvents = null
+throwPivot = null
+frameData = null
+stateTransitions = Array[Object]([SubResource("Resource_00ht3")])
+animationSettings = Array[Object]([SubResource("Resource_aegmo")])
+AIFlags = 0
+metadata/_custom_type_script = "uid://bf60srwkccsm8"
