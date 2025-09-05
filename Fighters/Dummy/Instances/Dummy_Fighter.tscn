@@ -560,6 +560,7 @@ body = NodePath("../PhysicsBody")
 [node name="PhysicsBody" type="Node" parent="."]
 script = ExtResource("12_bham4")
 StayOnBounds = true
+IgnoreWalls = true
 HitboxPresets = Array[Object]([ExtResource("13_41tll")])
 
 [node name="InputManager" type="Node" parent="."]
